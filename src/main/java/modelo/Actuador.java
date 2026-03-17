@@ -1,19 +1,19 @@
 package modelo;
 
-public abstract class Actuador implements IDispositivo {
+public abstract class Actuador implements Dispositivo {
 
     protected String id;
     protected String nombre;
     protected String estado;
 
-    public Actuador(String id, String nombre, String estadoInicial) {
+    public Actuador(String id, String nombre, String estado) {
         this.id = id;
         this.nombre = nombre;
-        this.estado = estadoInicial;
+        this.estado = estado;
     }
 
     @Override
-    public String getID() {
+    public String getId() {
         return id;
     }
 
@@ -23,15 +23,10 @@ public abstract class Actuador implements IDispositivo {
     }
 
     @Override
-    public String getEstadoActual() {
-        return estado;
-    }
-
     public String getEstado() {
         return estado;
     }
 
     public abstract void ejecutarAccion(String accion);
 
-    public abstract String[] getAccionesPosibles();
 }

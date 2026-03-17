@@ -1,21 +1,21 @@
 package modelo;
 
-public abstract class Sensor implements IDispositivo {
+public abstract class Sensor implements Dispositivo {
 
     protected String id;
     protected String nombre;
-    protected String unidadMedida;
+    protected String unidad;
     protected double valor;
 
-    public Sensor(String id, String nombre, String unidadMedida) {
+    public Sensor(String id, String nombre, String unidad) {
         this.id = id;
         this.nombre = nombre;
-        this.unidadMedida = unidadMedida;
-        this.valor = 0.0;
+        this.unidad = unidad;
+        valor = 0;
     }
 
     @Override
-    public String getID() {
+    public String getId() {
         return id;
     }
 
@@ -29,9 +29,10 @@ public abstract class Sensor implements IDispositivo {
     }
 
     @Override
-    public String getEstadoActual() {
-        return valor + " " + unidadMedida;
+    public String getEstado() {
+        return valor + " " + unidad;
     }
 
     public abstract void actualizarValor();
+
 }

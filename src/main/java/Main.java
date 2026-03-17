@@ -4,37 +4,31 @@ public class Main {
 
     public static void main(String[] args) {
 
-        SmartTecnoHouse casa = new SmartTecnoHouse();
+        Casa casa = new Casa();
 
-        // Crear sensores
-        SensorTemperatura temp = new SensorTemperatura("temp", "Sensor de Temperatura");
-        SensorLuz luz = new SensorLuz("light", "Sensor de Luz");
-        SensorPresencia pir = new SensorPresencia("pir", "Sensor de Presencia");
+        SensorTemperatura temp = new SensorTemperatura();
+        SensorLuz luz = new SensorLuz();
+        SensorPresencia presencia = new SensorPresencia();
 
-        // Crear actuadores
-        ActuadorBombilla bombilla = new ActuadorBombilla("bulb", "Bombilla");
-        ActuadorVentilador ventilador = new ActuadorVentilador("fan", "Ventilador");
+        Bombilla bombilla = new Bombilla();
+        Ventilador ventilador = new Ventilador();
 
-        // Agregar dispositivos al sistema
         casa.agregarSensor(temp);
         casa.agregarSensor(luz);
-        casa.agregarSensor(pir);
+        casa.agregarSensor(presencia);
 
         casa.agregarActuador(bombilla);
         casa.agregarActuador(ventilador);
 
-        // Actualizar sensores
         casa.actualizarSensores();
+        casa.mostrarEstado();
 
-        // Mostrar estado
-        casa.mostrarEstadoSistema();
-
-        // Simular acciones
         bombilla.ejecutarAccion("ON");
         ventilador.ejecutarAccion("HIGH");
 
-        System.out.println("\n=== ESTADO TRAS ACCIONES ===");
-
-        casa.mostrarEstadoSistema();
+        System.out.println();
+        System.out.println("Despues de activar actuadores:");
+        casa.mostrarEstado();
     }
+
 }

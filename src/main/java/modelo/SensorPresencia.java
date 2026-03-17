@@ -2,18 +2,26 @@ package modelo;
 
 public class SensorPresencia extends Sensor {
 
-    public SensorPresencia(String id, String nombre) {
-        super(id, nombre, "detecciones");
+    public SensorPresencia() {
+        super("pir", "Sensor presencia", "");
     }
 
     @Override
     public void actualizarValor() {
-        this.valor = Math.random() > 0.5 ? 1 : 0;
+        if (Math.random() > 0.5) {
+            valor = 1;
+        } else {
+            valor = 0;
+        }
     }
 
     @Override
-    public String getEstadoActual() {
-        return valor == 1 ? "Presencia detectada" : "Sin presencia";
+    public String getEstado() {
+        if (valor == 1) {
+            return "Hay presencia";
+        } else {
+            return "No hay presencia";
+        }
     }
-}
 
+}

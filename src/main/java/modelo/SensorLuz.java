@@ -2,12 +2,13 @@ package modelo;
 
 public class SensorLuz extends Sensor {
 
-    public SensorLuz(String id, String nombre) {
-        super(id, nombre, "%");
+    public SensorLuz() {
+        super("light", "Sensor luz", "%");
     }
 
     @Override
     public void actualizarValor() {
-        this.valor = Math.random() * 100;
+        valor = Math.random() * 100;
     }
+
 }
