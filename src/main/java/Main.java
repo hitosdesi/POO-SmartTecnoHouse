@@ -31,8 +31,11 @@ public class Main {
         casa.agregarRegla(regla2);
 
         casa.actualizarSensores();
-        casa.aplicarReglas();
+
+        System.out.println("Antes de aplicar reglas:");
         casa.mostrarEstado();
+
+        casa.aplicarReglas();
 
         System.out.println();
         System.out.println("Despues de aplicar reglas:");
