@@ -3,21 +3,37 @@
 Proyecto de Programación Orientada a Objetos para UTAMED.
 
 ## Descripción
+
 Sistema domótico IoT desarrollado en Java aplicando:
 
 - Programación Orientada a Objetos
 - Arquitectura MVC
 - Patrón Strategy
-- Interfaz gráfica Swing
-- Persistencia en JSON/TXT
 - Control de versiones con Git y GitHub
 
+## Estado actual
+
+Actualmente el proyecto incluye:
+
+- Sensores: temperatura, luz, presencia, humedad
+- Actuadores: bombilla, ventilador, persiana
+- Reglas automáticas (Strategy)
+- Simulación por consola
+
+Pendiente de implementar:
+
+- Interfaz gráfica (Swing)
+- Persistencia de datos (JSON/TXT)
+- Documentación final
+
 ## Estructura del proyecto
-- `modelo`: lógica de negocio y clases del dominio
-- `vista`: interfaz gráfica Swing
-- `controlador`: gestión de eventos y comunicación MVC
-- `data`: persistencia y logs
-- `docs`: documentación generada y memoria técnica
+
+- modelo: lógica de negocio
+- vista: interfaz gráfica (en desarrollo)
+- controlador: gestión de eventos
+- data: persistencia (pendiente)
+- docs: documentación (pendiente)
 
 ## Autor
+
 Desiderio Hitos Padial
