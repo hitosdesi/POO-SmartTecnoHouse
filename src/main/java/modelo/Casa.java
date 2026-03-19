@@ -51,4 +51,28 @@ public class Casa {
         }
     }
 
+    // NUEVO MÉTODO PARA GUI Y PERSISTENCIA
+    public String getEstadoTexto() {
+        String texto = "";
+
+        texto += "Sensores:\n";
+        for (Sensor sensor : sensores) {
+            texto += sensor.getNombre() + ": " + sensor.getEstado() + "\n";
+        }
+
+        texto += "\nActuadores:\n";
+        for (Actuador actuador : actuadores) {
+            texto += actuador.getNombre() + ": " + actuador.getEstado() + "\n";
+        }
+
+        return texto;
+    }
+
+    public ArrayList<Sensor> getSensores() {
+        return sensores;
+    }
+
+    public ArrayList<Actuador> getActuadores() {
+        return actuadores;
+    }
 }
