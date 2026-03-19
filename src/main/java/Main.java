@@ -15,6 +15,9 @@ public class Main {
         Ventilador ventilador = new Ventilador();
         Persiana persiana = new Persiana();
 
+        ReglaVentilacion regla1 = new ReglaVentilacion();
+        ReglaIluminacion regla2 = new ReglaIluminacion();
+
         casa.agregarSensor(temp);
         casa.agregarSensor(luz);
         casa.agregarSensor(presencia);
@@ -24,15 +27,15 @@ public class Main {
         casa.agregarActuador(ventilador);
         casa.agregarActuador(persiana);
 
+        casa.agregarRegla(regla1);
+        casa.agregarRegla(regla2);
+
         casa.actualizarSensores();
+        casa.aplicarReglas();
         casa.mostrarEstado();
 
-        bombilla.ejecutarAccion("ON");
-        ventilador.ejecutarAccion("HIGH");
-        persiana.ejecutarAccion("ABIERTA");
-
         System.out.println();
-        System.out.println("Despues de activar actuadores:");
+        System.out.println("Despues de aplicar reglas:");
         casa.mostrarEstado();
     }
 

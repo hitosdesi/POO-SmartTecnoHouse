@@ -6,10 +6,12 @@ public class Casa {
 
     private ArrayList<Sensor> sensores;
     private ArrayList<Actuador> actuadores;
+    private ArrayList<Regla> reglas;
 
     public Casa() {
         sensores = new ArrayList<>();
         actuadores = new ArrayList<>();
+        reglas = new ArrayList<>();
     }
 
     public void agregarSensor(Sensor sensor) {
@@ -20,9 +22,19 @@ public class Casa {
         actuadores.add(actuador);
     }
 
+    public void agregarRegla(Regla regla) {
+        reglas.add(regla);
+    }
+
     public void actualizarSensores() {
         for (Sensor sensor : sensores) {
             sensor.actualizarValor();
+        }
+    }
+
+    public void aplicarReglas() {
+        for (Regla regla : reglas) {
+            regla.aplicar(sensores, actuadores);
         }
     }
 
