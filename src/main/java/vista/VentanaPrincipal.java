@@ -4,6 +4,7 @@ import modelo.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -62,11 +63,17 @@ public class VentanaPrincipal extends JFrame {
 
     private void guardarEstado() {
         try {
-            FileWriter writer = new FileWriter("data/estado.txt");
+            File archivo = new File("data/estado.txt");
+
+            if (!archivo.getParentFile().exists()) {
+                archivo = new File("../../../data/estado.txt");
+            }
+
+            FileWriter writer = new FileWriter(archivo);
             writer.write(casa.getEstadoTexto());
             writer.close();
 
-            JOptionPane.showMessageDialog(this, "Estado guardado en data/estado.txt");
+            JOptionPane.showMessageDialog(this, "Estado guardado en " + archivo.getPath());
 
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Error al guardar el archivo");
