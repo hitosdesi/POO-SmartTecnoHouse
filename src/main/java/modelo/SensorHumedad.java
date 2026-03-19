@@ -2,12 +2,13 @@ package modelo;
 
 public class SensorHumedad extends Sensor {
 
-    public SensorHumedad(String id, String nombre) {
-        super(id, nombre, "%");
+    public SensorHumedad() {
+        super("hum", "Sensor humedad", "%");
     }
 
     @Override
     public void actualizarValor() {
-        this.valor = 30 + Math.random() * 60;
+        valor = 30 + Math.random() * 50;
     }
+
 }
