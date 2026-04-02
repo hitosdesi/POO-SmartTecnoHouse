@@ -1,20 +1,18 @@
 package vista;
 
-import modelo.*;
+import controlador.SmartTecnoHouseControlador;
+import modelo.Casa;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 
 public class VentanaPrincipal extends JFrame {
 
-    private Casa casa;
+    private SmartTecnoHouseControlador controlador;
     private JTextArea areaTexto;
 
     public VentanaPrincipal(Casa casa) {
-        this.casa = casa;
+        this.controlador = new SmartTecnoHouseControlador(casa);
 
         setTitle("Smart TecnoHouse");
         setSize(500, 400);
@@ -40,17 +38,18 @@ public class VentanaPrincipal extends JFrame {
         add(panelBotones, BorderLayout.SOUTH);
 
         btnActualizar.addActionListener(e -> {
-            casa.actualizarSensores();
+            controlador.actualizarSensores();
             mostrarEstado();
         });
 
         btnReglas.addActionListener(e -> {
-            casa.aplicarReglas();
+            controlador.aplicarReglas();
             mostrarEstado();
         });
 
         btnGuardar.addActionListener(e -> {
-            guardarEstado();
+            controlador.guardarEstado();
+            JOptionPane.showMessageDialog(this, "Estado guardado correctamente.");
         });
 
         mostrarEstado();
@@ -58,25 +57,7 @@ public class VentanaPrincipal extends JFrame {
     }
 
     private void mostrarEstado() {
-        areaTexto.setText(casa.getEstadoTexto());
+        areaTexto.setText(controlador.getEstado());
     }
 
-    private void guardarEstado() {
-        try {
-            File archivo = new File("data/estado.txt");
-
-            if (!archivo.getParentFile().exists()) {
-                archivo = new File("../../../data/estado.txt");
-            }
-
-            FileWriter writer = new FileWriter(archivo);
-            writer.write(casa.getEstadoTexto());
-            writer.close();
-
-            JOptionPane.showMessageDialog(this, "Estado guardado en " + archivo.getPath());
-
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "Error al guardar el archivo");
-        }
-    }
 }
