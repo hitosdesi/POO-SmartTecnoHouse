@@ -2,9 +2,8 @@ package controlador;
 
 import modelo.Actuador;
 import modelo.Casa;
-import modelo.Sensor;
+import modelo.GestorJSON;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -20,6 +19,7 @@ public class SmartTecnoHouseControlador {
     public SmartTecnoHouseControlador(Casa casa) {
         this.casa = casa;
         crearCarpetaData();
+        GestorJSON.cargar(casa.getActuadores());
     }
 
     public void actualizarSensores() {
@@ -47,14 +47,15 @@ public class SmartTecnoHouseControlador {
             FileWriter writer = new FileWriter(ESTADO_PATH);
             writer.write(casa.getEstadoTexto());
             writer.close();
-            registrarLog("Estado guardado en " + ESTADO_PATH);
         } catch (IOException e) {
             System.out.println("Error al guardar estado: " + e.getMessage());
         }
+        GestorJSON.guardar(casa.getActuadores());
+        registrarLog("Estado guardado en TXT y JSON");
     }
 
     private void crearCarpetaData() {
-        File carpeta = new File("data");
+        java.io.File carpeta = new java.io.File("data");
         if (!carpeta.exists()) {
             carpeta.mkdir();
         }
@@ -81,4 +82,3 @@ public class SmartTecnoHouseControlador {
     }
 
 }
-

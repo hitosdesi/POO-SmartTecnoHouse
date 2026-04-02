@@ -1,0 +1,19 @@
+{
+  "actuadores": [
+    {
+      "id": "bulb",
+      "nombre": "Bombilla",
+      "estado": "OFF"
+    },
+    {
+      "id": "fan",
+      "nombre": "Ventilador",
+      "estado": "HIGH"
+    },
+    {
+      "id": "blind",
+      "nombre": "Persiana",
+      "estado": "CERRADA"
+    }
+  ]
+}

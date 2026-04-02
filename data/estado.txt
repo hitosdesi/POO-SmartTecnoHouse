@@ -1,10 +1,10 @@
 Sensores:
-Sensor temperatura: 29.64628189444054 °C
-Sensor luz: 4.33392943975014 %
+Sensor temperatura: 27.156775353262983 °C
+Sensor luz: 76.52401615227895 %
 Sensor presencia: Hay presencia
-Sensor humedad: 34.89565053620305 %
+Sensor humedad: 50.56163682726449 %
 
 Actuadores:
-Bombilla: ON
+Bombilla: OFF
 Ventilador: HIGH
 Persiana: CERRADA
