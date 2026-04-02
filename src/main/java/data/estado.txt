@@ -1,8 +1,8 @@
 Sensores:
-Sensor temperatura: 23.08303656818506 °C
-Sensor luz: 48.63646562216265 %
+Sensor temperatura: 24.10511715637391 °C
+Sensor luz: 79.43514845661305 %
 Sensor presencia: No hay presencia
-Sensor humedad: 73.21574691452273 %
+Sensor humedad: 63.96677306815397 %
 
 Actuadores:
 Bombilla: OFF
