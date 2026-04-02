@@ -5,7 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Casa casa = new Casa();
+        Casa casa = Casa.getInstancia();
 
         casa.agregarSensor(new SensorTemperatura());
         casa.agregarSensor(new SensorLuz());
@@ -20,6 +20,7 @@ public class Main {
         casa.agregarRegla(new ReglaIluminacion());
 
         new VentanaPrincipal(casa);
+
     }
 
 }
