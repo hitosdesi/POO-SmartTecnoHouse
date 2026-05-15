@@ -3,7 +3,7 @@
     {
       "id": "bulb",
       "nombre": "Bombilla",
-      "estado": "OFF"
+      "estado": "ON"
     },
     {
       "id": "fan",
