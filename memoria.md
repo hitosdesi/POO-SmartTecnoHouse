@@ -1,0 +1,9 @@
+- Introducción
+- Objetivos
+- Arquitectura MVC
+- Sensores y actuadores
+- Patrón Strategy
+- Persistencia JSON
+- Uso de Git y ramas
+- Capturas o explicación GUI
+- Conclusión
