@@ -1,0 +1,10 @@
+Sensores:
+Sensor temperatura: 21.990783161842828 °C
+Sensor luz: 74.63848281288912 %
+Sensor presencia: No hay presencia
+Sensor humedad: 69.04323970673349 %
+
+Actuadores:
+Bombilla: OFF
+Ventilador: OFF
+Persiana: CERRADA

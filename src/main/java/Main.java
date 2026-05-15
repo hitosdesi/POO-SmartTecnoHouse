@@ -1,34 +1,26 @@
 import modelo.*;
+import vista.VentanaPrincipal;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Casa casa = new Casa();
+        Casa casa = Casa.getInstancia();
 
-        SensorTemperatura temp = new SensorTemperatura();
-        SensorLuz luz = new SensorLuz();
-        SensorPresencia presencia = new SensorPresencia();
+        casa.agregarSensor(new SensorTemperatura());
+        casa.agregarSensor(new SensorLuz());
+        casa.agregarSensor(new SensorPresencia());
+        casa.agregarSensor(new SensorHumedad());
 
-        Bombilla bombilla = new Bombilla();
-        Ventilador ventilador = new Ventilador();
+        casa.agregarActuador(new Bombilla());
+        casa.agregarActuador(new Ventilador());
+        casa.agregarActuador(new Persiana());
 
-        casa.agregarSensor(temp);
-        casa.agregarSensor(luz);
-        casa.agregarSensor(presencia);
+        casa.agregarRegla(new ReglaVentilacion());
+        casa.agregarRegla(new ReglaIluminacion());
 
-        casa.agregarActuador(bombilla);
-        casa.agregarActuador(ventilador);
+        new VentanaPrincipal(casa);
 
-        casa.actualizarSensores();
-        casa.mostrarEstado();
-
-        bombilla.ejecutarAccion("ON");
-        ventilador.ejecutarAccion("HIGH");
-
-        System.out.println();
-        System.out.println("Despues de activar actuadores:");
-        casa.mostrarEstado();
     }
 
 }

@@ -1,23 +1,24 @@
-# Smart TecnoHouse
+# SmartTecnoHouse POO
 
-Proyecto de Programación Orientada a Objetos para UTAMED.
-
-## Descripción
-Sistema domótico IoT desarrollado en Java aplicando:
-
-- Programación Orientada a Objetos
-- Arquitectura MVC
-- Patrón Strategy
-- Interfaz gráfica Swing
-- Persistencia en JSON/TXT
-- Control de versiones con Git y GitHub
-
-## Estructura del proyecto
-- `modelo`: lógica de negocio y clases del dominio
-- `vista`: interfaz gráfica Swing
-- `controlador`: gestión de eventos y comunicación MVC
-- `data`: persistencia y logs
-- `docs`: documentación generada y memoria técnica
+Sistema de control domótico IoT desarrollado en Java.
 
 ## Autor
-Desiderio Hitos Padial
+<!-- Pon aquí tu nombre -->
+
+## Descripción
+Aplicación Java con arquitectura MVC, patrones Strategy y Singleton,
+interfaz gráfica Swing y persistencia JSON. Desarrollada para la
+asignatura de Programación Orientada a Objetos.
+
+## Estructura
+src/main/java/
+├── modelo/       → Lógica de negocio (Sensores, Actuadores, Reglas)
+├── vista/        → Interfaz gráfica Swing
+└── controlador/  → Mediador entre Modelo y Vista
+\`\`\`
+
+## Tecnologías
+- Java 17+
+- Swing (GUI)
+- Gson (persistencia JSON)
+- Maven
